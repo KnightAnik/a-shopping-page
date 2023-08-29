@@ -21,18 +21,18 @@ function setTextElementValueById(elementId, newvalue) {
     const formattedValue = numericValue.toFixed(2);
     textElement.innerText = formattedValue;
 
-    if(newvalue > 0){
+    if (newvalue > 0) {
         purchaseButton.removeAttribute('disabled');
     } else {
         purchaseButton.setAttribute('disabled', true);
     }
 }
 
-function addToCartList(nameOfItem){
+function addToCartList(nameOfItem) {
     console.log(nameOfItem);
     const listing = document.getElementById('cart-list');
 
-    const count = listing.childElementCount + 1 ;
+    const count = listing.childElementCount + 1;
 
     const p = document.createElement('p');
     p.classList.add('my-4')
@@ -49,7 +49,7 @@ document.getElementById('first-card').addEventListener('click', function () {
 
     const newTotalMoney = prevTotalMoney + priceMoney;
 
-    
+
     setTextElementValueById('totalPrice', newTotalMoney);
     setTextElementValueById('totalPayPrice', newTotalMoney);
     addToCartList('K. Accessories');
